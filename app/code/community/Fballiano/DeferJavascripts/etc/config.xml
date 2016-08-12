@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Fballiano_DeferJavascripts>
+            <version>0.1.0</version>
+        </Fballiano_DeferJavascripts>
+    </modules>
+    <global>
+        <models>
+            <fballiano_deferjavascripts>
+                <class>Fballiano_DeferJavascripts_Model</class>
+                <resourceModel>fballiano_deferjavascripts_resource</resourceModel>
+            </fballiano_deferjavascripts>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <http_response_send_before>
+                <observers>
+                    <fballiano_deferjavascripts>
+                        <type>singleton</type>
+                        <class>fballiano_deferjavascripts/observer</class>
+                        <method>httpResponseSendBefore</method>
+                    </fballiano_deferjavascripts>
+                </observers>
+            </http_response_send_before>
+        </events>
+    </frontend>
+</config>
