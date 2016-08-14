@@ -25,12 +25,14 @@ class Fballiano_DeferJavascripts_Model_Observer
     public function httpResponseSendBefore(Varien_Event_Observer $observer)
     {
         $response = $observer->getResponse();
+        $html = $response->getBody();
+        if (stripos($html, "</body>") === false) return;
 
-        preg_match_all('~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is', $response->getBody(), $scripts);
+        preg_match_all('~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is', $html, $scripts);
         if ($scripts and isset($scripts[0]) and $scripts[0]) {
             $html = preg_replace('~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is', '', $response->getBody());
             $scripts = implode("", $scripts[0]);
-            $html = str_replace("</body>", "$scripts</body>", $html);
+            $html = str_ireplace("</body>", "$scripts</body>", $html);
             $response->setBody($html);
         }
     }
