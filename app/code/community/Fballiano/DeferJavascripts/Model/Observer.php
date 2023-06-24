@@ -28,9 +28,13 @@ class Fballiano_DeferJavascripts_Model_Observer
         $html = $response->getBody();
         if (stripos($html, "</body>") === false) return;
 
+        // stripping all HTML comments
+        $html = preg_replace('/<!--(.*)-->/Uis', '', $html, -1, $count);
+
+        // defering js
         preg_match_all('~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is', $html, $scripts);
         if ($scripts and isset($scripts[0]) and $scripts[0]) {
-            $html = preg_replace('~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is', '', $response->getBody());
+            $html = preg_replace('~<\s*\bscript\b[^>]*>(.*?)<\s*\/\s*script\s*>~is', '', $html);
             $scripts = implode("", $scripts[0]);
             $html = str_ireplace("</body>", "$scripts</body>", $html);
             $response->setBody($html);
