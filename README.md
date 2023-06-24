@@ -1,7 +1,5 @@
-Magento Defer Javascripts
+Defer Javascripts module for OpenMage (and Magento 1.9)
 =============================
-
-Defer Javascripts module for Magento 1
 
 Backup!!!
 ---------
@@ -16,11 +14,6 @@ Otherwise with modman:
 ```shell
 modman clone https://github.com/fballiano/magento-defer-javascripts
 ```
-
-Compatibility
--------------
-This module was developed on Magento 1.9.
-If you have a different version of Magento and the module is working please drop me a line so I can update this compatibility list.
 
 Known Issues
 ------------
