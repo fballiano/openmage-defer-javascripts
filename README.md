@@ -1,6 +1,16 @@
 Defer Javascripts module for OpenMage (and Magento 1.9)
 =============================
 
+Features
+---------
+- moves all javascript tags just before the `</body>` tag
+- removes all HTML comments
+
+Known Issues
+------------
+
+The module can't detect scripts that have been commented out, they'll become active again.
+
 Backup!!!
 ---------
 Backup your database before launching the translation process!!!
@@ -9,16 +19,9 @@ This module is provided "as is" and I'll not be responsible for any data damage.
 Installation
 ------------
 
-Simply download the whole repository and copy everything to your Magento document root.
-Otherwise with modman:
-```shell
-modman clone https://github.com/fballiano/magento-defer-javascripts
-```
-
-Known Issues
-------------
-
-The module can't detect scripts that have been commented out, they'll become active again.
+Install via composer (`composer require fballiano/openmage-defer-javascripts`), 
+modman (`modman clone https://github.com/fballiano/openmage-defer-javascripts`)
+or any other way you like
 
 Support
 -------
