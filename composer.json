@@ -1,25 +1,24 @@
 {
-   "name":"fballiano/magento-magento-defer-javascripts",
-   "license":"OSL-3.0",
-   "type":"magento-module",
-   "description":"Defer Javascripts module for Magento 1",
-   "homepage":"https://github.com/fballiano/magento-defer-javascripts",
-   "require":{
-      "php":">=5.3.0",
-      "magento-hackathon/magento-composer-installer":"*"
-   },
-   "repositories":[
-      {
-         "type":"composer",
-         "url":"http://packages.firegento.com"
-      }
-   ],
-   "authors":[
-      {
-         "name":"Fabrizio Balliano",
-         "email":"fabrizio@fabrizioballiano.com",
-         "homepage":"http://fabrizioballiano.com",
-         "role":"Developer"
-      }
-   ]
+  "name":"fballiano/openmage-defer-javascripts",
+  "license":"OSL-3.0",
+  "type":"magento-module",
+  "description":"Defer Javascripts module for OpenMage (and Magento 1.9)",
+  "keywords": [
+    "magento",
+    "magento1",
+    "openmage"
+  ],
+  "homepage":"https://github.com/fballiano/openmage-defer-javascripts",
+  "require":{
+    "php": ">=7.4.0",
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "authors": [
+    {
+      "name": "Fabrizio Balliano",
+      "email": "fabrizio@fabrizioballiano.com",
+      "homepage": "http://fabrizioballiano.com",
+      "role": "Developer"
+    }
+  ]
 }
