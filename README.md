@@ -1,4 +1,4 @@
-Defer Javascripts module for OpenMage (and Magento 1.9)
+Defer Javascripts module for OpenMage/Magento1
 =============================
 
 <table><tr><td align=center>
